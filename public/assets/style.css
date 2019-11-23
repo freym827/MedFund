@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    padding-top: 10px;
+    background-color: #ed7f61;
+    box-shadow: 0px 2px 8px black;
+    z-index: 10;
+}
+.headLogo {
+    height: 60px;
+    display: block;
+    margin-left: 100px;
+    cursor: pointer;
+}
+.headLinkBox {
+    display: none;
+    width: 450px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+.headLinks {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-right: 2px solid white;
+}
+.headLinks:hover {
+    color: black;
+}
+.instructions {
+    border: none;
+}
+.hamburger {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.hamburgerCover {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 11;
+}
+.hamburgerCover:hover {
+    cursor: pointer;
+}
+.bun {
+    width: 100%;
+    margin-bottom: 10px;
+    border-top: 6px solid white;
+}
+.dropDown {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    z-index: 11;
+    display: none;
+}
+.dropList {
+    font-size: 20px;
+    font-weight: bolder;
+    display: block;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #ed7f61;
+}
+.dropList:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.dropOrange {
+    background-color: #0f606b;
+}
+
+.homeWrapper {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.whiteHome {
+    width: 100%;
+    height: 200px;
+}
+.rightHome {
+    display: none;
+    width: 33%;
+    height: 100%;
+    background-image: url('images/friendship1crop1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.centerHome {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/heartdoccrop2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.leftHome {
+    display: none;
+    width: 33%;
+    height: 100%;
+    background-image: url('images/hearthandscrop1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homeBox {
+    width: 90%;
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    left: 50%;
+    -ms-transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+}
+.statement {
+    color: rgba(237, 127, 97, 1);
+    font-size: 40px;
+    text-shadow: 1px 1px 1px gray;
+}
+.buttonBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.homeButtons {
+    padding: 20px;
+    border: 2px solid white;
+    background-image: linear-gradient(rgba(237, 127, 97, .8), rgba(237, 127, 97, .8));
+    width: 80%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0px 4px 8px black;
+    text-shadow: 4px 4px 4px rgba(237, 127, 97, 1);
+    margin-bottom: 20px;
+}
+.homeButtons:hover {
+    transform: scale(1.1);
+    background-image: linear-gradient(rgba(237, 127, 97, 1), rgba(237, 127, 97, 1));
+    cursor: pointer;
+}
+.howItWorksWrapper {
+    width: 100%;
+    height: 60vh;
+}
+.howBox {
+    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+}
+.howTitle{
+    display: none;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(237, 127, 97, 1);
+    text-align: center;
+}
+.httext {
+    margin-top: 20px;
+    color: rgba(15, 96, 107, 1);
+    font-size: 80px;
+}
+.how {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(15, 96, 107, .9);
+    border-radius: 10px;
+}
+.howtext {
+    color: rgba(237, 127, 97, 1);
+    font-size: 20px;
+    width: 80%;
+    margin: 40px auto;
+}
+.howButton {
+    width: 80%;
+    margin: 10px auto;
+    background-color: rgba(15, 96, 107, 0);
+    height: 60px;
+    border: 2px solid rgba(237, 127, 97, 1);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.howButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+@media only screen and (min-width: 450px) {
+    .headLogo {
+        margin: 0 auto;
+    }
+    .homeWrapper {
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .homeBox {
+        width: 60%;
+        height: 450px;
+        background-image: linear-gradient(rgba(237, 127, 97, .9), rgba(237, 127, 97, .9));
+        top: 35%;
+        border-radius: 10px;
+        box-shadow: 0px 2px 8px gray;
+        padding-left: 40px;
+    }
+    .homeButtons {
+        background-image: none;
+        background-color: rgba(237, 127, 97, 0);
+    }
+    .whiteHome {
+        display: none;
+    }
+    .leftHome {
+        display: block;
+        width: 50%
+    }
+    .centerHome {
+        width: 50%;
+        height: 600px;
+        background-image: url('images/heartdoccrop1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .statement {
+        color: white;
+        font-size: 40px;
+        text-shadow: 4px 4px 4px rgba(237, 127, 97, 1);
+    }
+    .homeButtons {
+        box-shadow: 0px 4px 8px rgba(237, 127, 97, 1);
+        text-shadow: 4px 4px 4px rgba(237, 127, 97, 1);
+    }
+    .howBox {
+        margin-top: 200px;
+    }
+    .howTitle{
+        display: block;
+        width: 50%;
+    }
+    .how {
+        width: 50%;
+        background-color: rgba(15, 96, 107, 1);
+        border-radius: 0px;
+        background-image: none;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .howBox {
+        width: 70%;
+        margin-top: 0px;
+    }
+    .hamburger {
+        display: none;
+    }
+    .hamburgerCover {
+        display: none;
+    }
+    .headLinkBox {
+        display: block;
+    }
+    .homeBox {
+        height: 300px;
+    }
+    .homeButtons {
+        width: 200px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .howBox {
+        width: 60%;
+    }
+    .rightHome {
+        display: block;
+        width: 33%;
+        height: 600px;
+        background-image: url('images/friendship1crop1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .centerHome {
+        display: block;
+        width: 34%;
+        height: 600px;
+        background-image: url('images/heartdoccrop1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .leftHome {
+        display: block;
+        width: 33%;
+        height: 600px;
+        background-image: url('images/hearthandscrop1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .statement {
+        margin-bottom: 50px;
+    }
+}

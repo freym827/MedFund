@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <!-- font-family: 'Libre Baskerville', serif; -->
+    <title>MedFund</title>
+</head>
+<body>
+    <div class='header'>
+        <img class='headLogo' alt='logo' onclick='homeScroll()' src='assets/images/logoheadcrop.png'>
+        <div class='headLinkBox'>
+            <a href='' class='searchLink headLinks search'>Search</a>
+            <a href='' class='headLinks signIn'>Sign in</a>
+            <a href='' class='headLinks instructions'>How it works</a>
+        </div>
+        <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
+        <div class='hamburger'>
+            <div class='bun'></div>
+            <div class='bun'></div>
+            <div class='bun'></div>
+        </div>
+    </div>
+    <div class='dropDown' id='DropDown'>
+        <span class='dropList dropOrange'  onclick="homeScroll()">Home</span>
+        <span class='dropList'  onclick="">Search</span>
+        <span class='dropList dropOrange'  onclick="">Find out more</span>
+        <span class='dropList'  onclick="">Sign in</span>
+        <span class='dropList dropOrange'  onclick="">Create a profile</span>
+        <span class='dropList'  onclick="">Resources</span>
+    </div>
+    <div class='homeWrapper' id='Home'>
+        <div class='whiteHome'>
+
+        </div>
+        <div class='leftHome'>
+
+        </div>
+        <div class='centerHome'>
+            
+        </div>
+        <div class='rightHome'>
+            
+        </div>
+    </div>
+    <div class='homeBox'>
+        <h1 class='statement'>MedFund helps you send love to those that need it.</h1>
+        <div class='buttonBox'>
+            <button class='homeButtons searchButton'>Find a patient</button>
+            <button class='homeButtons createButton'>Create a profile</button>
+            <button class='homeButtons discoverButton'>Discover more</button>
+        </div>
+    </div>
+    <div class='howItWorksWrapper' id='How'>
+        <div class='howBox'>
+            <div class='howTitle'>
+                <h1 class='httext'>How</h1>
+                <h1 class='httext'>it</h1>
+                <h1 class='httext'>works</h1>
+            </div>
+            <div class='how'>
+                <p class='howtext'>
+                    MedFund was created as a specialized crowdfunding and resource center for those struggling with illness.
+                    Our goal is to create a highly personalized space for people to reach out to others, express their individalized needs,
+                    and to get help from caring and generous people. 
+                </p>
+                <button class='howButton searchHow'>Find a patient</button>
+                <button class='howButton createHow'>Create a profile</button>
+            </div>
+        </div>
+    </div>
+    <div class='resourcesWrapper' id='Resources'>
+        <h1 class='title resourceTitle'>Resources</h1>
+
+    </div>
+<script type = "text/javascript" src = "assets/app.js"></script>
+</body>
+</html>
