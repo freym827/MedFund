@@ -9,8 +9,9 @@ var initClient = function() {
     })
 }
 
-initClient()
-console.log(auth2)
+initClient().then(function() {
+    console.log(auth2)
+})
 
 initClient()
 var dropList = () => {
