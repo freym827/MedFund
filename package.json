@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/freym827/MedFund/issues"
   },
-  "homepage": "https://github.com/freym827/MedFund#readme"
+  "homepage": "https://github.com/freym827/MedFund#readme",
+  "engines": {
+    "node": "8.11.3",
+    "npm": "5.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7"
+  }
 }
