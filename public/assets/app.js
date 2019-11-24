@@ -1,7 +1,10 @@
-
-var auth2 = gapi.auth2.getAuthInstance()
-if(auth2.isSignedIn.get()) {
-    console.log('hello')
+const params = {
+    client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
+}
+function init() {
+    gapi.load('auth2', function() {
+        gapi.auth2.init(params)
+    });
 }
 
 var dropList = () => {
