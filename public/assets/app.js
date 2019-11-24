@@ -4,14 +4,14 @@ var initClient = async function() {
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
         })
+        var signed = await auth2.isSignedIn.get()
+        console.log(signed)
     })
-    var signed = await auth2.isSignedIn.get()
-    console.log(signed)
 }
 initClient()
 
 gapi.load('auth2', async function() {
-    auth2 = gapi.auth2.getAuthInstance({
+    auth2 = await gapi.auth2.getAuthInstance({
       client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
       fetch_basic_profile: true,
       scope: 'profile'
