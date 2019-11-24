@@ -6,8 +6,6 @@ var initClient = function() {
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
         })
-    }).then(function() {
-        console.log(auth2)
     })
 }
 
