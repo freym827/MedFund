@@ -4,13 +4,13 @@ var initClient = function() {
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
         })
+    }).then(function() {
+        var auth2 = gapi.auth2.getAuthInstance()
+        console.log('hello')
+        console.log(auth2.isSignedIn.get())
     })
 }
 initClient()
-
-var auth2 = gapi.auth2.getAuthInstance()
-console.log('hello')
-console.log(auth2.isSignedIn.get())
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
