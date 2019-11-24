@@ -8,13 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <!-- font-family: 'Libre Baskerville', serif; -->
     <title>MedFund</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com">
 </head>
 <body>
     <div class='header'>
         <img class='headLogo' alt='logo' onclick='homeScroll()' src='assets/images/logoheadcrop.png'>
         <div class='headLinkBox'>
             <a href='' class='searchLink headLinks search'>Search</a>
-            <a href='' class='headLinks signIn'>Sign in</a>
+            <a href='/signin' class='headLinks signIn'>Sign in</a>
             <a href='' class='headLinks instructions'>How it works</a>
         </div>
         <div class='hamburgerCover' id='hc' onclick="dropList()"></div>

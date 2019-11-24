@@ -13,18 +13,18 @@
 </head>
 <body>
     <div class='header'>
-        <img class='headLogo' alt='logo' onclick='homeScroll()' src='assets/images/logoheadcrop.png'>
-        <div class='headLinkBox'>
-            <a href='' class='searchLink headLinks search'>Search</a>
-            <a href='/signin' class='headLinks signIn'>Sign in</a>
-            <a href='' class='headLinks instructions'>How it works</a>
-        </div>
-        <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
-        <div class='hamburger'>
-            <div class='bun'></div>
-            <div class='bun'></div>
-            <div class='bun'></div>
-        </div>
+            <img class='headLogo' alt='logo' onclick='homeScroll()' src='assets/images/logoheadcrop.png'>
+            <div class='headLinkBox'>
+                <a href='' class='searchLink headLinks search'>Search</a>
+                <a href='/signin.html' class='headLinks signIn'>Sign in</a>
+                <a href='' class='headLinks instructions'>How it works</a>
+            </div>
+            <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
+            <div class='hamburger'>
+                <div class='bun'></div>
+                <div class='bun'></div>
+                <div class='bun'></div>
+            </div>
     </div>
     <div class='dropDown' id='DropDown'>
         <span class='dropList dropOrange'  onclick="homeScroll()">Home</span>
@@ -34,6 +34,8 @@
         <span class='dropList dropOrange'  onclick="">Create a profile</span>
         <span class='dropList'  onclick="">Resources</span>
     </div>
+    
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script type = "text/javascript" src = "assets/app.js"></script>
 </body>
 </html>
