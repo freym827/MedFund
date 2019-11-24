@@ -6,17 +6,10 @@ var initClient = function() {
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
         });
-
-        auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
     });
 };
-var onSuccess = function(user) {
-    console.log('Signed in as ' + user.getBasicProfile().getName());
-};
 
-var onFailure = function(error) {
-    console.log(error);
-};
+initClient()
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
