@@ -1,3 +1,4 @@
+console.log('hello')
 var dropList = () => {
     drop = document.getElementById('DropDown')
     if(drop.style.display === 'none' || drop.style.display === '') {
