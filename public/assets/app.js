@@ -4,6 +4,7 @@ gapi.load('auth2', function() {
 
 gapi.load('auth2', function() {
     console.log('hello1')
+    gapi.auth2.init()
     if (auth2.isSignedIn.get()) {
         console.log('hello2')
       }
