@@ -21,7 +21,7 @@ body {
 }
 .headLinkBox {
     display: none;
-    width: 480px;
+    width: 470px;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -33,7 +33,7 @@ body {
 .headLinks {
     color: white;
     text-decoration: none;
-    padding: 30px;
+    padding: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
     display: inline-block;
