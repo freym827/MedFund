@@ -8,13 +8,14 @@ var initClient = function() {
 }
 initClient()
 
-gapi.load('auth2', function() {
+gapi.load('auth2', async function() {
     auth2 = gapi.auth2.getAuthInstance({
       client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
       fetch_basic_profile: true,
       scope: 'profile'
     });
-    console.log(auth2.isSignedIn.get())
+    var signed = await auth2.isSignedIn.get()
+    console.log(signed)
     if (auth2.isSignedIn.get()) {
         console.log('hello')
     }
