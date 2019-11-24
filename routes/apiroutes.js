@@ -3,7 +3,7 @@ const connection = require('../config/connection')
 const client = new OAuth2Client('7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com');
 module.exports = function(app) {
    app.post('/api/tokensignin', (req, res) => {
-       console.log(req, res)
+       console.log(req.body.idtoken)
        //verify().catch(console.error);
    })
 }
