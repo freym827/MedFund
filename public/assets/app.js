@@ -1,6 +1,7 @@
 
-var auth2;
+var auth2 = gapi.auth2.getAuthInstance();
 console.log('hello')
+console.log(auth2)
 var initClient = function() {
     gapi.load('auth2', function(){
         auth2 = gapi.auth2.init({
