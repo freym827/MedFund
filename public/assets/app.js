@@ -9,7 +9,7 @@ var initClient = function() {
 initClient()
 
 gapi.load('auth2', function() {
-    auth2 = gapi.auth2.init({
+    auth2 = gapi.auth2.getAuthInstance({
       client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
       fetch_basic_profile: true,
       scope: 'profile'
