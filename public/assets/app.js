@@ -14,8 +14,7 @@ gapi.load('auth2', function() {
       fetch_basic_profile: true,
       scope: 'profile'
     });
-  
-    // Sign the user in, and then retrieve their ID.
+    console.log('hello')
     if (auth2.isSignedIn.get()) {
         var profile = auth2.currentUser.get().getBasicProfile();
         console.log('ID: ' + profile.getId());
