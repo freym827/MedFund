@@ -3,12 +3,17 @@ gapi.load('auth2', function() {
 })
 
 gapi.load('auth2', function() {
-    console.log('hello1')
-    gapi.auth2.init()
-    if (auth2.isSignedIn.get()) {
-        console.log('hello2')
-      }
-})
+    auth2 = gapi.auth2.init({
+      client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
+      fetch_basic_profile: true,
+      scope: 'profile'
+    });
+  
+    // Sign the user in, and then retrieve their ID.
+    auth2.signIn().then(function() {
+      console.log(auth2.currentUser.get().getId());
+    });
+});
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
@@ -25,13 +30,13 @@ document.addEventListener('mouseup', event => {
 })
 
 function onSignIn(googleUser) {
-    document.getElementById('ProfileLink').style.display = 'inline-block'
-    document.getElementById('SignInLink').style.display = 'none'
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    // document.getElementById('ProfileLink').style.display = 'inline-block'
+    // document.getElementById('SignInLink').style.display = 'none'
+    // var profile = googleUser.getBasicProfile();
+    // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    // console.log('Name: ' + profile.getName());
+    // console.log('Image URL: ' + profile.getImageUrl());
+    // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     var id_token = googleUser.getAuthResponse().id_token
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/api/tokensignin');
