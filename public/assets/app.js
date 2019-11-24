@@ -8,6 +8,8 @@ function init() {
     });
 }
 
+init()
+
 var dropList = () => {
     drop = document.getElementById('DropDown')
     if(drop.style.display === 'none' || drop.style.display === '') {
