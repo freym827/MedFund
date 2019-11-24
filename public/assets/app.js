@@ -42,6 +42,8 @@ document.addEventListener('mouseup', event => {
 })
 
 function onSignIn(googleUser) {
+    document.getElementById('MyMedFund').style.display = 'inline-block'
+    document.getElementById('SignIn').style.display = 'none'
     // document.getElementById('ProfileLink').style.display = 'inline-block'
     // document.getElementById('SignInLink').style.display = 'none'
     // var profile = googleUser.getBasicProfile();
@@ -61,6 +63,8 @@ function onSignIn(googleUser) {
 }
 
 function signOut() {
+    document.getElementById('MyMedFund').style.display = 'none'
+    document.getElementById('SignIn').style.display = 'inline-block'
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
