@@ -12,9 +12,21 @@ gapi.load('auth2', async function() {
       scope: 'profile'
     });
     var signed = await auth2.isSignedIn.get()
-    console.log(signed)
+    if(signed) {
+        signedInSetUp()
+    }
+    if(!signed) {
+        notSignedInSetUp()
+    }
 });
 
+const signedInSetUp = () => {
+    document.getElementById('MyMedFund').style.display = 'inline-block'
+}
+
+const notSignedInSetUp = () => {
+    document.getElementById('SignIn').style.display = 'inline-block'
+}
 var dropList = () => {
     drop = document.getElementById('DropDown')
     if(drop.style.display === 'none' || drop.style.display === '') {

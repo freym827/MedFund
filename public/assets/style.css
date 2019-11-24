@@ -39,7 +39,10 @@ body {
     display: inline-block;
     border-right: 2px solid white;
 }
-.profile {
+.isSigned {
+    display: none;
+}
+.isNotSigned {
     display: none;
 }
 .headLinks:hover {
