@@ -2,9 +2,8 @@ const {OAuth2Client} = require('google-auth-library');
 const connection = require('../config/connection')
 const client = new OAuth2Client('7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com');
 module.exports = function(app) {
-   app.post('/api/tokensignin', (req, res) => {
-       console.log(req.body.idtoken)
-       res.send(verify(req.body.idtoken))
+   app.post('/api/tokensignin', async (req, res) => {
+       await res.send(verify(req.body.idtoken))
    })
 }
 
