@@ -87,4 +87,5 @@ function signOut() {
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
+    auth2.disconnect();
 }
