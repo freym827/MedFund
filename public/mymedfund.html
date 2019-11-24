@@ -8,16 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <!-- font-family: 'Libre Baskerville', serif; -->
     <title>MedFund</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </head>
 <body>
     <div class='header'>
         <a class='headLogo' href='/'><img class='headLogo' alt='logo' src='assets/images/logoheadcrop.png'></a>
         <div class='headLinkBox'>
             <a href='' class='searchLink headLinks search'>Search</a>
-            <a href='/mymedfund' class='headLinks signIn isSigned' id='MyMedFund'>My MedFund</a>
-            <a href='/mymedfund' class='headLinks signIn isNotSigned' id='SignIn'>Sign in</a>
+            <a href='/mymedfund' class='headLinks isSigned' id='MyMedFund'>My MedFund</a>
+            <a href='/mymedfund' class='headLinks isNotSigned' id='SignIn'>Sign in</a>
             <a href='' class='headLinks instructions'>How it works</a>
         </div>
         <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
@@ -36,9 +36,11 @@
         <span class='dropList'  onclick="">Resources</span>
     </div>
     <div class='signInBox'>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <a href="#" onclick="signOut();">Sign out</a>
+        <!-- <div class="g-signin2 signIn" data-width="300" data-height="60" data-color='dark' data-longtitle="true" data-onsuccess="onSignIn"></div> -->
+        <div id="my-signin2"></div>
+        <a class='signOut' href="#" onclick="signOut();">Sign out</a>
     </div>
 <script type = "text/javascript" src = "assets/app.js"></script>
+
 </body>
 </html>
