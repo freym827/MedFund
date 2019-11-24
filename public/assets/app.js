@@ -1,7 +1,4 @@
 
-var auth2 = gapi.auth2.getAuthInstance();
-console.log('hello')
-console.log(auth2)
 var initClient = function() {
     gapi.load('auth2', function(){
         auth2 = gapi.auth2.init({
@@ -9,8 +6,11 @@ var initClient = function() {
         })
     })
 }
-
 initClient()
+
+var auth2 = gapi.auth2.getAuthInstance();
+console.log('hello')
+console.log(auth2)
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
