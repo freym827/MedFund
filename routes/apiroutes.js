@@ -9,6 +9,7 @@ module.exports = function(app) {
 
 async function verify(token) {
     console.log("HELLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    console.log(token)
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
