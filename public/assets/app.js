@@ -1,3 +1,5 @@
+import { generateKeyPair } from "crypto"
+
 var dropList = () => {
     drop = document.getElementById('DropDown')
     if(drop.style.display === 'none' || drop.style.display === '') {
@@ -16,6 +18,9 @@ var homeScroll = () => {
     document.getElementById('Home').scrollIntoView({behavior: 'smooth'})
 }
 
+gapi.load('auth2', function() {
+    gapi.auth2.init()
+})
 function onSignIn(googleUser) {
     console.log('hello')
     var profile = googleUser.getBasicProfile();
