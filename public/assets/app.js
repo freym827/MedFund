@@ -1,6 +1,8 @@
 
 var auth2 = gapi.auth2.getAuthInstance()
-console.log(auth2)
+if(auth2.isSignedIn.get()) {
+    console.log('hello')
+}
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
