@@ -240,7 +240,7 @@ body {
     border-radius: 10px;
 }
 .signOut {
-    display: none;
+    /* display: none; */
 }
 .signIn {
 
