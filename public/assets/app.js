@@ -16,7 +16,7 @@ gapi.load('auth2', async function() {
     });
     var signed = await auth2.isSignedIn.get()
     console.log(signed)
-    if (auth2.isSignedIn.get()) {
+    if (signed) {
         console.log('hello')
     }
 });
