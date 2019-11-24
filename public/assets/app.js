@@ -1,23 +1,22 @@
-const params = {
-    client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
-}
-function init() {
-    gapi.load('auth2', function() {
-        gapi.auth2.init(params)
+
+var auth2;
+
+var initClient = function() {
+    gapi.load('auth2', function(){
+        auth2 = gapi.auth2.init({
+            client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
+        });
+
+        auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
     });
-}
-init()
-gapi.load('auth2', function() {
-    if (auth2.isSignedIn.get()) {
-        var profile = auth2.currentUser.get().getBasicProfile();
-        console.log('ID: ' + profile.getId());
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-    }
-})
+};
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+};
+
+var onFailure = function(error) {
+    console.log(error);
+};
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
