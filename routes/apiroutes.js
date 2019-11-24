@@ -3,13 +3,11 @@ const connection = require('../config/connection')
 const client = new OAuth2Client('7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com');
 module.exports = function(app) {
    app.post('/api/tokensignin', (req, res) => {
-       res.send('yo')
+       res.send(verify(req.body.tokenid))
    })
 }
 
 async function verify(token) {
-    console.log("HELLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    console.log(token)
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
@@ -20,4 +18,5 @@ async function verify(token) {
     const userid = payload['sub'];
     // If request specified a G Suite domain:
     //const domain = payload['hd'];
+    return userid;
 }
