@@ -1,5 +1,3 @@
-import { generateKeyPair } from "crypto"
-
 var dropList = () => {
     drop = document.getElementById('DropDown')
     if(drop.style.display === 'none' || drop.style.display === '') {
@@ -32,6 +30,7 @@ function onSignIn(googleUser) {
 }
 
 function signOut() {
+    console.log('hello')
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
