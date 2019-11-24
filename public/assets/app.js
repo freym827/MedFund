@@ -1,13 +1,6 @@
-if(!auth2.isSignedIn.get()) {
-    console.log('hello')
-    gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-        client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
-        fetch_basic_profile: true,
-        scope: 'profile'
-        });
-    });
-}
+
+var auth2 = gapi.auth2.getAuthInstance()
+console.log(auth2)
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
@@ -37,6 +30,7 @@ function onSignIn(googleUser) {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         console.log('Signed in as: ' + xhr.responseText);
+
     };
     xhr.send('idtoken=' + id_token);
 }
