@@ -2,15 +2,30 @@
 var initClient = function() {
     gapi.load('auth2', function(){
         auth2 = gapi.auth2.init({
-            client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
+            client_id: 
         })
-    }).then(function() {
-        var auth2 = gapi.auth2.getAuthInstance()
-        console.log('hello')
-        console.log(auth2.isSignedIn.get())
     })
 }
 initClient()
+
+gapi.load('auth2', function() {
+    auth2 = gapi.auth2.init({
+      client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
+      fetch_basic_profile: false,
+      scope: 'profile'
+    });
+  
+    // Sign the user in, and then retrieve their ID.
+    if (auth2.isSignedIn.get()) {
+        var profile = auth2.currentUser.get().getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+      }
+});
 
 var dropList = () => {
     drop = document.getElementById('DropDown')
