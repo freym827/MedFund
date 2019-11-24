@@ -220,6 +220,13 @@ body {
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.signInBox {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+}
 @media only screen and (min-width: 450px) {
     .headLogo {
         margin: 0 auto;

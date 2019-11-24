@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <!-- font-family: 'Libre Baskerville', serif; -->
+    <title>MedFund</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com">
+</head>
+<body>
+    <div class='header'>
+        <img class='headLogo' alt='logo' onclick='homeScroll()' src='assets/images/logoheadcrop.png'>
+        <div class='headLinkBox'>
+            <a href='' class='searchLink headLinks search'>Search</a>
+            <a href='/signin' class='headLinks signIn'>Sign in</a>
+            <a href='' class='headLinks instructions'>How it works</a>
+        </div>
+        <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
+        <div class='hamburger'>
+            <div class='bun'></div>
+            <div class='bun'></div>
+            <div class='bun'></div>
+        </div>
+    </div>
+    <div class='dropDown' id='DropDown'>
+        <span class='dropList dropOrange'  onclick="homeScroll()">Home</span>
+        <span class='dropList'  onclick="">Search</span>
+        <span class='dropList dropOrange'  onclick="">Find out more</span>
+        <span class='dropList'  onclick="">Sign in</span>
+        <span class='dropList dropOrange'  onclick="">Create a profile</span>
+        <span class='dropList'  onclick="">Resources</span>
+    </div>
+    <div class='signInBox'>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+<script type = "text/javascript" src = "assets/app.js"></script>
+</body>
+</html>

@@ -21,7 +21,6 @@ gapi.load('auth2', function() {
 })
 
 function onSignIn(googleUser) {
-    console.log('hello')
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
@@ -30,7 +29,6 @@ function onSignIn(googleUser) {
 }
 
 function signOut() {
-    console.log('hello')
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
