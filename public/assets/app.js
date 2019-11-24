@@ -1,10 +1,12 @@
 
-var initClient = function() {
+var initClient = async function() {
     gapi.load('auth2', function(){
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
         })
     })
+    var signed = await auth2.isSignedIn.get()
+    console.log(signed)
 }
 initClient()
 
