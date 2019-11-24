@@ -21,7 +21,7 @@ body {
 }
 .headLinkBox {
     display: none;
-    width: 450px;
+    width: 480px;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -38,6 +38,9 @@ body {
     padding-bottom: 5px;
     display: inline-block;
     border-right: 2px solid white;
+}
+.profile {
+    display: none;
 }
 .headLinks:hover {
     color: black;
@@ -226,10 +229,6 @@ body {
     height: 200px;
     position: absolute;
     top: 200px;
-}
-
-.profile {
-    display: none;
 }
 @media only screen and (min-width: 450px) {
     .headLogo {
