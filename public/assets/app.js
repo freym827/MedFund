@@ -3,6 +3,7 @@ const params = {
 }
 function init() {
     gapi.load('auth2', function() {
+        console.log('hello')
         gapi.auth2.init(params)
     });
 }
