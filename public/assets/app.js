@@ -4,8 +4,8 @@ console.log(error);
 }
 const signInSetUp = () => {
     console.log('hello')
-    renderButton()
     document.getElementById('SignInBox').style.display = 'flex'
+    renderButton()
 }
 function renderButton() {
     gapi.signin2.render('my-signin2', {
