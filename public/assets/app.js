@@ -131,7 +131,7 @@ const signInDatabaseWork = (confirmedToken, name, email) => {
             }
         }
         if(isUser) {
-
+            displayUser(confirmedToken)
         }
         if(!isUser) {
             addUser(confirmedToken, name, email)
@@ -178,7 +178,10 @@ const saveChanges = () => {
     document.getElementById('NameChange').style.display = 'none'
     document.getElementById('EmailChange').style.display = 'none'
     document.getElementById('AboutChange').style.display = 'none'
+}
 
+const displayUser = confirmedToken => {
+    console.log(confirmedToken)
 }
 
 
