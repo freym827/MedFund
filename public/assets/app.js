@@ -1,4 +1,4 @@
-
+let isButtonRendered = false;
 function onFailure(error) {
 console.log(error);
 }
@@ -8,6 +8,7 @@ const signInSetUp = () => {
     renderButton()
 }
 function renderButton() {
+    isButtonRendered = true;
     gapi.signin2.render('my-signin2', {
       'scope': 'profile email',
       'width': 240,
@@ -97,4 +98,7 @@ function signOut() {
     });
     auth2.disconnect();
     document.getElementById('SignInBox').style.display = 'block'
+    if(!isButtonRendered) {
+        renderButton()
+    }
 }
