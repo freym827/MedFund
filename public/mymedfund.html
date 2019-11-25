@@ -42,14 +42,15 @@
     </div>
     <div class='profileBox' id='ProfileBox'>
         <a class='signOut' href="#" onclick="signOut();">Sign out</a>
-        <button class='editProfile' id='EditProfile'>Edit profile</button>
+        <button class='editProfile' id='EditProfile' onclick="editProfile()">Edit profile</button>
         <img class='profilePic' id='ProfilePic' src='assets/images/noImage.png'>
         <div class='basicInfoBox' id='BasicInfoBox'>
-            <p class='basicLabel'>Name: <span id='NAME'></span></p>
-            <p class='basicLabel'>Email: <span id='EMAIL'></span></p>
+            <p class='basicLabel'>Name: <span class='statics' id='NAME'>Matthew Frey</span></p>    <input type='text' class='changers' id='NameChange'><br>
+            <p class='basicLabel'>Email: <span class='statics' id='EMAIL'>freym90@yahoo.com</span></p>    <input type='text' class='changers' id='EmailChange'>
         </div>
+        <span class='aboutLabel'>About</span>
         <div class='aboutBox' id='AboutBox'>
-            <span class='aboutLabel'>About</span>
+            <textarea class='changers' id='AboutChange'></textarea>
         </div>
     </div>
 <script type = "text/javascript" src = "assets/app.js"></script>

@@ -260,7 +260,8 @@ body {
 }
 
 .profileBox {
-    display: none;
+    /* display: none; */
+    display: flex;
     flex-wrap: wrap;
     width: 1000px;
     position: absolute;
@@ -282,6 +283,7 @@ body {
 }
 .basicLabel {
     font-size: 30px;
+    display: inline-block;
 }
 .aboutBox {
     width: 80%;
@@ -321,6 +323,15 @@ body {
     text-decoration: none;
     box-sizing: border-box;
     text-align: center;
+}
+#NameChange {
+    font-size: 30px;
+}
+#EmailChange {
+    font-size: 30px;
+}
+.changers {
+    display: none;
 }
 @media only screen and (min-width: 450px) {
     .signInBox {
