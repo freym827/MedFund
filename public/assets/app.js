@@ -83,6 +83,7 @@ function onSignIn(googleUser) {
 
     };
     xhr.send('idtoken=' + id_token);
+    signedInSetUp()
 }
 
 function signOut() {
@@ -93,4 +94,5 @@ function signOut() {
       console.log('User signed out.');
     });
     auth2.disconnect();
+    notSignedInSetUp()
 }
