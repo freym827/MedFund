@@ -137,7 +137,7 @@ const addUser = (confirmedToken, name, email) => {
     xhr.onload = function() {
 
     };
-    xhr.send(confirmedToken, name, email);
+    xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
 }
 // const testdatabase = () => {
 //     var xhr = new XMLHttpRequest();
