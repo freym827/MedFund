@@ -116,6 +116,7 @@ const signInDatabaseWork = (confirmedToken) => {
 
 const testdatabase = () => {
     var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
         console.log(xhr.response);
