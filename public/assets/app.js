@@ -107,4 +107,9 @@ function signOut() {
 
 const signInDatabaseWork = (confirmedToken) => {
     console.log(confirmedToken)
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/api/users');
+    xhr.onload = function() {
+        console.log(xhr.responseText)
+    };
 }

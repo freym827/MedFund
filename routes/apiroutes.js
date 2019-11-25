@@ -2,10 +2,17 @@ const {OAuth2Client} = require('google-auth-library');
 const connection = require('../config/connection')
 const client = new OAuth2Client('7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com');
 module.exports = function(app) {
-   app.post('/api/tokensignin', async (req, res) => {
-       const userid = await verify(req.body.idtoken)
-       res.send(userid)
-   })
+
+    app.get('/api/users', (req, res) => {
+        connection.query('SELECT * FROM users', (err, data) => {
+            err?res.send(err):res.json({users: data})
+        })
+    })
+   
+    app.post('/api/tokensignin', async (req, res) => {
+        const userid = await verify(req.body.idtoken)
+        res.send(userid)
+    })
 }
 
 async function verify(token) {
