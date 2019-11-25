@@ -227,7 +227,7 @@ const doTheUpdate = (id, newName, newEmail, newAbout) => {
     xhr.onload = function() {
         
     };
-    xhr.send('google_id='+id + '&name='+newName + '&email=' + newEmail + '&about=' + newAbout);
+    xhr.send('google_id='+id + '&name='+newName + '&email='+newEmail + '&about='+newAbout);
 }
 
 const displayUser = (name, email, about) => {

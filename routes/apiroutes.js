@@ -11,9 +11,10 @@ module.exports = function(app) {
 
     app.post('/api/users/update', (req, res) => {
         console.log(req.body)
-        connection.query(query, (err, data) => {
-            err?res.send(err):res.json({users: data})
-        })
+        res.send()
+        // connection.query(query, (err, data) => {
+        //     err?res.send(err):res.json({users: data})
+        // })
     })
 
     app.post('/api/users', (req, res) => {
