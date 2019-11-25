@@ -21,7 +21,6 @@ body {
     cursor: pointer;
 }
 .headLinkBox {
-    display: none;
     width: 470px;
     color: white;
     font-weight: bold;
