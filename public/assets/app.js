@@ -2,7 +2,10 @@
 function onFailure(error) {
 console.log(error);
 }
-
+const signInSetUp = () => {
+    renderButton()
+    document.getElementById('SignInBox').style.display = 'flex'
+}
 function renderButton() {
     gapi.signin2.render('my-signin2', {
       'scope': 'profile email',
@@ -14,8 +17,6 @@ function renderButton() {
       'onfailure': onFailure
     });
 }
-renderButton()
-
 
 gapi.load('auth2', async function(){
     auth2 = gapi.auth2.init({
@@ -40,12 +41,10 @@ gapi.load('auth2', async function() {
 
 const signedInSetUp = () => {
     document.getElementById('MyMedFund').style.display = 'inline-block'
-    document.getElementById('ProfileBox').style.display = 'flex'
 }
 
 const notSignedInSetUp = () => {
     document.getElementById('SignIn').style.display = 'inline-block'
-    document.getElementById('SignInBox').style.display = 'block'
 }
 var dropList = () => {
     drop = document.getElementById('DropDown')
