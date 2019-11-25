@@ -82,7 +82,7 @@ function onSignIn(googleUser) {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     var confirmedToken
     xhr.onload = function() {
-        console.log('Signed in as: ' + xhr.responseText);
+        // console.log('Signed in as: ' + xhr.responseText);
         confirmedToken = xhr.responseText
     };
     xhr.send('idtoken=' + id_token);
