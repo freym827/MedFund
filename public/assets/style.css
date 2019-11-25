@@ -333,6 +333,9 @@ body {
 .changers {
     display: none;
 }
+.saveChanges {
+    display: none;
+}
 @media only screen and (min-width: 450px) {
     .signInBox {
         width: 400px;

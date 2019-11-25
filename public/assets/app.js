@@ -1,5 +1,3 @@
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
-
 let isButtonRendered = false;
 function onFailure(error) {
 console.log(error);
@@ -145,6 +143,8 @@ const addUser = (confirmedToken, name, email) => {
 }
 
 const editProfile = () => {
+    document.getElementById('EditProfile').style.display = 'none'
+    document.getElementById('SaveChanges').style.display = 'block'
     const statics = document.getElementsByClassName('statics')
     const changers = document.getElementsByClassName('changers')
     const fillers = [statics[0].textContent, statics[1].textContent]
@@ -154,4 +154,16 @@ const editProfile = () => {
     for(i=0;i<2;i++) {
         changers[i].style.display = 'inline-block'
     }
+}
+
+const saveChanges = () => {
+    document.getElementById('EditProfile').style.display = 'block'
+    document.getElementById('SaveChanges').style.display = 'none'
+    document.getElementById('NAME').style.display = 'inline-block'
+    document.getElementById('EMAIL').style.display = 'inline-block'
+    document.getElementById('NAME').textContent = document.getElementById('NameChange').value
+    document.getElementById('EMAIL').textContent = document.getElementById('EmailChange').value
+    document.getElementById('NameChange').style.display = 'none'
+    document.getElementById('EmailChange').style.display = 'none'
+
 }
