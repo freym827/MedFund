@@ -246,8 +246,11 @@ const displayUsers = () => {
         let users = xhr.response.users
         for(i=0;i<users.length;i++) {
             newItem = document.createElement('li')
+            newHead = document.createElement('h1')
+            newHead.classList.add('userItem')
             newItem.classList.add('userItem')
             newItem.textContent = users[i].user_name + " " + users[i].user_email
+            list.appendChild(newHead)
             list.appendChild(newItem)
         }
     };
