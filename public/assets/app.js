@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(){
+    // Handler when the DOM is fully loaded
+  
+
 let isButtonRendered = false;
 function onFailure(error) {
 console.log(error);
@@ -170,3 +174,5 @@ const saveChanges = () => {
     document.getElementById('AboutChange').style.display = 'none'
 
 }
+
+});
