@@ -118,7 +118,7 @@ const testdatabase = () => {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
-        console.log(xhr.response.json);
+        console.log(xhr.response);
     };
     xhr.send();
 }
