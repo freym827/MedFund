@@ -67,6 +67,7 @@ document.addEventListener('mouseup', event => {
 function onSignIn(googleUser) {
     document.getElementById('MyMedFundLink').style.display = 'inline-block'
     document.getElementById('SignInLink').style.display = 'none'
+    document.getElementById('SignInBox').style.display = 'none'
     // document.getElementById('ProfileLink').style.display = 'inline-block'
     // document.getElementById('SignInLink').style.display = 'none'
     // var profile = googleUser.getBasicProfile();
@@ -89,6 +90,7 @@ function onSignIn(googleUser) {
 function signOut() {
     document.getElementById('MyMedFundLink').style.display = 'none'
     document.getElementById('SignInLink').style.display = 'inline-block'
+    document.getElementById('ProfileBox').style.display = 'none'
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
