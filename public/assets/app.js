@@ -165,11 +165,13 @@ const editProfile = () => {
     const statics = document.getElementsByClassName('statics')
     const changers = document.getElementsByClassName('changers')
     const fillers = [statics[0].textContent, statics[1].textContent, statics[2].textContent]
+
     for(i=0;i<3;i++) {
         statics[i].style.display = 'none'
     }
     for(i=0;i<3;i++) {
         changers[i].style.display = 'inline-block'
+        changers[i].textContent = fillers[i]
     }
 }
 
