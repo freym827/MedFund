@@ -133,8 +133,8 @@ const signInDatabaseWork = (confirmedToken, name, email) => {
 const addUser = (confirmedToken, name, email) => {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.open('POST', '/api/users');
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
 
     };
