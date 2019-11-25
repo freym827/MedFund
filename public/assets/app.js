@@ -220,16 +220,14 @@ const updateStart = async (newName, newEmail, newAbout) => {
 }
 
 const doTheUpdate = (id, newName, newEmail, newAbout) => {
-    console.log(id, newName, newEmail, newAbout)
-    // var xhr = new XMLHttpRequest();
-    // xhr.responseType = 'json';
-    // xhr.open('POST', '/api/users');
-    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // xhr.onload = function() {
-    //     document.getElementById('NAME').textContent = name
-    //     document.getElementById('EMAIL').textContent = email
-    // };
-    // xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', '/api/users/update');
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        
+    };
+    xhr.send('google_id='+id + '&name='+newName + '&email=' + newEmail + '&about=' + newAbout);
 }
 
 const displayUser = (name, email, about) => {

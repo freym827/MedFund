@@ -9,9 +9,15 @@ module.exports = function(app) {
         })
     })
 
+    app.post('/api/users/update', (req, res) => {
+        console.log(req.body)
+        connection.query(query, (err, data) => {
+            err?res.send(err):res.json({users: data})
+        })
+    })
+
     app.post('/api/users', (req, res) => {
         const query = "insert into users (google_id, user_name, user_email) values ('" + req.body.confirmedToken + "', '" + req.body.name + "', '" + req.body.email + "');"
-        console.log(query)
         connection.query(query, (err, data) => {
             err?res.send(err):res.json({users: data})
         })
