@@ -236,4 +236,21 @@ const displayUser = (name, email, about) => {
     document.getElementById('AboutBox').textContent = about
 }
 
+const displayUsers = () => {
+    const list = document.getElementById('UserList')
+    list.innerHTML = ''
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('GET', '/api/users');
+    xhr.onload = function() {
+        let users = xhr.response.users
+        for(i=0;i<users.length;i++) {
+            newItem = document.createElement('li')
+            newItem.textContent = users[i].user_name + " " + users[i].user_email
+            list.appendChild(newItem)
+        }
+    };
+    xhr.send();
+}
+
 
