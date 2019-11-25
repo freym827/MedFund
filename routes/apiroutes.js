@@ -10,6 +10,7 @@ module.exports = function(app) {
     })
 
     app.post('/api/users', (req, res) => {
+        console.log("HELOOOOOOOOOOOOOOOOOOFASEFASEFASEFASEFASGASGASEGASE")
         console.log(req)
         res.send()
     })
