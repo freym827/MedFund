@@ -222,6 +222,9 @@ body {
     font-weight: bold;
     font-size: 20px;
 }
+.helpLink {
+    color: rgba(237, 127, 97, 1);
+}
 
 .howButton:hover {
     transform: scale(1.1);
@@ -263,7 +266,7 @@ body {
 .profileBox {
     display: none;
     flex-wrap: wrap;
-    width: 1000px;
+    width: 95%;
     position: absolute;
     top: 110px;
     left: 50%;
@@ -345,6 +348,19 @@ body {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+.help {
+    margin-top: 50px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.footer {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
 @media only screen and (min-width: 450px) {
     .signInBox {
         width: 400px;
@@ -362,6 +378,12 @@ body {
 }
 
 @media only screen and (min-width: 850px) {
+    .howItWorksWrapper {
+        height: 70vh;
+    }
+    .profileBox {
+        width: 80%;
+    }
     .homeBox {
         width: 60%;
         height: 450px;
@@ -414,6 +436,9 @@ body {
 }
 
 @media only screen and (min-width: 1120px) {
+    .profileBox {
+        width: 1000px;
+    }
     .howBox {
         width: 70%;
         margin-top: 0px;

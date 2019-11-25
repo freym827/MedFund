@@ -29,10 +29,11 @@
     </div>
     <div class='dropDown' id='DropDown'>
         <a href='/' class='dropList dropOrange'>Home</a>
-        <a href='/' class='dropList'>Search</a>
         <a href='#How' class='dropList dropOrange'>Find out more</a>
         <a href='/mymedfund' class='dropList'>My MedFund</a>
-        <a href='/' class='dropList'>Resources</a>
+        <a href='/' class='dropList'>Search</a>
+        <a href='/' class='dropList dropOrange'>Resources</a>
+        <a href='#Help' class='dropList'>Help</a>
     </div>
     <div class='homeWrapper' id='Home'>
         <div class='whiteHome'>
@@ -53,7 +54,7 @@
         <div class='buttonBox'>
             <button class='homeButtons searchButton'>Find a patient</button>
             <button class='homeButtons createButton' onclick='goToMyMedFund()'>Create a profile</button>
-            <button class='homeButtons discoverButton'>Discover more</button>
+            <button class='homeButtons discoverButton' onclick='goToDiscoverMore()'>Discover more</button>
         </div>
     </div>
     <div class='howItWorksWrapper' id='How'>
@@ -68,16 +69,42 @@
                     MedFund was created as a specialized crowdfunding and resource center for those struggling with illness.
                     Our goal is to create a highly personalized space for people to reach out to others, express their individalized needs,
                     and to get help from caring and generous people. 
+                    <a class='helpLink' href='#Help'> Click here for more information about the site and its design</a>
                 </p>
                 <button class='howButton searchHow'>Find a patient</button>
-                <button class='howButton createHow'>Create a profile</button>
+                <button class='howButton createHow' onclick='goToMyMedFund()'>Create a profile</button>
             </div>
         </div>
     </div>
-    <div class='resourcesWrapper' id='Resources'>
+    <!-- <div class='resourcesWrapper' id='Resources'>
         <h1 class='title resourceTitle'>Resources</h1>
 
+    </div> -->
+    <div class='help' id="Help">
+        <h1 class='helpLabel'>Help and techincal information</h1>
+        <h2>How to use</h2>
+        <p>In addition to the goal stated above, this site was created to have a logical and easy to use layout.
+             Profiles are automatically created
+             when the user logs in. Currently the user must have a google account to log in the future
+             I would add more options. Once the user logs in and the profile is created
+             the user can edit their profile and save it for the future.
+             Profiles are stored in a SQL database which stores name, email, id number, the id number given from google,
+             information the user would like people to know about, 
+             and ideally a photo they can upload. I would like to 
+             integrate a shopping list and a paypal type of donation system. The site is made to be 
+             mobile responsive and look clean on any size screen. The project is hosted on heroku, 
+             and the code can be seen at <a href='https://github.com/freym827/MedFund'>github.com/freym827/MedFund</a>
+             . I have used JawsDB to create the remote database for the hosted project. 
+             The backend is built in node.js and express. The front end in HTML/CSS and 
+             vanilla javascript. The part I probably spent the most time on was learning 
+             and reading documentation for the google sign in button, and then building the 
+             ideas I wanted around that, and keeping track of the user that is logged in. 
+
+             I am Matthew Frey and I have completed this for Internet Systems Programming 
+             at The University of Akron. 
+        </p>
     </div>
+    <p class='footer'>Made with love from Ohio &copy;</p>
     <div id='SignInBox'></div>
     <div id='ProfileBox'></div>
 <script type = "text/javascript" src = "assets/app.js"></script>

@@ -41,6 +41,10 @@ console.log(error);
 const goToMyMedFund = () => {
     window.location = 'mymedfund.html'
 }
+
+const goToDiscoverMore = () => {
+    window.location = '#How'
+}
 const signInSetUp = () => {
     console.log('hello')
     document.getElementById('SignInBox').style.display = 'flex'
