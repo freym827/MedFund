@@ -10,11 +10,11 @@ module.exports = function(app) {
     })
 
     app.post('/api/users/update', (req, res) => {
-        console.log(req.body)
-        res.send()
-        // connection.query(query, (err, data) => {
-        //     err?res.send(err):res.json({users: data})
-        // })
+        const query = "update users set user_name = '" + req.body.name + "', user_email = '" + req.body.email + "', user_about = '" + req.body.about + "' where google_id = '" + req.body.google_id + "';"
+        console.log(query)
+        connection.query(query, (err, data) => {
+            err?res.send(err):res.json({users: data})
+        })
     })
 
     app.post('/api/users', (req, res) => {
