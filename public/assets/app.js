@@ -81,7 +81,7 @@ async function onSignIn(googleUser) {
     document.getElementById('SignInBox').style.display = 'none'
     // document.getElementById('ProfileLink').style.display = 'inline-block'
     // document.getElementById('SignInLink').style.display = 'none'
-    // var profile = googleUser.getBasicProfile();
+    var profile = googleUser.getBasicProfile();
     // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     // console.log('Name: ' + profile.getName());
     console.log(profile.getImageUrl());
