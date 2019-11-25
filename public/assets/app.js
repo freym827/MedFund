@@ -136,28 +136,8 @@ const addUser = (confirmedToken, name, email) => {
     xhr.open('POST', '/api/users');
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
-
+        document.getElementById('NAME').textContent = name
+        document.getElementById('EMAIL').textContent = email
     };
     xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
 }
-// const testdatabase = () => {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('GET', '/api/users');
-//     xhr.responseType = 'json';
-//     xhr.onload = function() {
-//         let isUser = false
-//         let users = xhr.response.users
-//         for(i=0;i<users.length;i++) {
-//             if(users[i].google_id == '34523462') {
-//                 isUser = true
-//             }
-//         }
-//         if(isUser) {
-
-//         }
-//         if(!isUser) {
-//             addUser()
-//         }
-//     };
-//     xhr.send();
-// }
