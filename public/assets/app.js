@@ -40,10 +40,12 @@ gapi.load('auth2', async function() {
 
 const signedInSetUp = () => {
     document.getElementById('MyMedFund').style.display = 'inline-block'
+    document.getElementById('ProfileBox').style.display = 'flex'
 }
 
 const notSignedInSetUp = () => {
     document.getElementById('SignIn').style.display = 'inline-block'
+    document.getElementById('SignInBox').style.display = 'block'
 }
 var dropList = () => {
     drop = document.getElementById('DropDown')

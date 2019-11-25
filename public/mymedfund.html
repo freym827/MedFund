@@ -36,9 +36,21 @@
         <span class='dropList'  onclick="">Resources</span>
     </div>
     <div class='signInBox'>
+        <img class='signLogo' alt='logo' src='assets/images/logoheadcrop.png'>
         <!-- <div class="g-signin2 signIn" data-width="300" data-height="60" data-color='dark' data-longtitle="true" data-onsuccess="onSignIn"></div> -->
-        <div id="my-signin2"></div>
+        <div id="my-signin2" class='signIn'></div>
+    </div>
+    <div class='profileBox' id='ProfileBox'>
         <a class='signOut' href="#" onclick="signOut();">Sign out</a>
+        <button class='editProfile' id='EditProfile'>Edit profile</button>
+        <img class='profilePic' id='ProfilePic' src='assets/images/noImage.png'>
+        <div class='basicInfoBox' id='BasicInfoBox'>
+            <p class='basicLabel'>Name:</p>
+            <p class='basicLabel'>Email:</p>
+        </div>
+        <div class='aboutBox' id='AboutBox'>
+            <span class='aboutLabel'>About</span>
+        </div>
     </div>
 <script type = "text/javascript" src = "assets/app.js"></script>
 
