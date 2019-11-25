@@ -201,7 +201,8 @@ const saveChanges = async () => {
     document.getElementById('EmailChange').style.display = 'none'
     document.getElementById('AboutChange').style.display = 'none'
 
-    let token = getCurrentToken()
+    let token = await getCurrentToken()
+    console.log(token)
     // var xhr = new XMLHttpRequest();
     // xhr.responseType = 'json';
     // xhr.open('POST', '/api/users');
@@ -219,9 +220,8 @@ const getCurrentToken = () => {
           fetch_basic_profile: true,
           scope: 'profile'
         });
-        console.log('hello')
         var id = auth2.currentUser.Ab.El
-        console.log(id)
+        return id
     });
 }
 
