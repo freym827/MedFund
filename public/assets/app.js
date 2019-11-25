@@ -171,7 +171,7 @@ const editProfile = () => {
     }
     for(i=0;i<3;i++) {
         changers[i].style.display = 'inline-block'
-        changers[i].textContent = fillers[i]
+        changers[i].value = fillers[i]
     }
 }
 
