@@ -96,5 +96,5 @@ function signOut() {
       console.log('User signed out.');
     });
     auth2.disconnect();
-    notSignedInSetUp()
+    document.getElementById('SignInBox').style.display = 'block'
 }
