@@ -37,6 +37,10 @@ function renderButton() {
 function onFailure(error) {
 console.log(error);
 }
+
+const goToMyMedFund = () => {
+    window.location = 'mymedfund.html'
+}
 const signInSetUp = () => {
     console.log('hello')
     document.getElementById('SignInBox').style.display = 'flex'
