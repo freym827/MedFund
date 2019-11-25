@@ -79,8 +79,6 @@ async function onSignIn(googleUser) {
     var profile = await googleUser.getBasicProfile();
     const name = await profile.getName()
     const email = await profile.getEmail()
-    console.log(name)
-    console.log(email)
     var id_token = googleUser.getAuthResponse().id_token
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/api/tokensignin');
@@ -89,7 +87,7 @@ async function onSignIn(googleUser) {
     xhr.onload = function() {
         // console.log('Signed in as: ' + xhr.responseText);
         confirmedToken = xhr.responseText
-        signInDatabaseWork(confirmedToken)
+        signInDatabaseWork(confirmedToken, name, email)
     };
     xhr.send('idtoken=' + id_token);
     signedInSetUp()
@@ -110,7 +108,9 @@ function signOut() {
     }
 }
 
-const signInDatabaseWork = (confirmedToken) => {
+const signInDatabaseWork = (confirmedToken, name, email) => {
+    console.log(name)
+    console.log(email)
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
