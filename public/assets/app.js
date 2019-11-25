@@ -189,22 +189,25 @@ const clearFields= () => {
 }
 
 const saveChanges = async () => {
+    newName = document.getElementById('NameChange').value
+    newEmail = document.getElementById('EmailChange').value
+    newAbout = document.getElementById('AboutChange').value
     document.getElementById('EditProfile').style.display = 'block'
     document.getElementById('SaveChanges').style.display = 'none'
     document.getElementById('NAME').style.display = 'inline-block'
     document.getElementById('EMAIL').style.display = 'inline-block'
     document.getElementById('AboutBox').style.display = 'inline-block'
-    document.getElementById('NAME').textContent = document.getElementById('NameChange').value
-    document.getElementById('EMAIL').textContent = document.getElementById('EmailChange').value
-    document.getElementById('AboutBox').textContent = document.getElementById('AboutChange').value
+    document.getElementById('NAME').textContent = newName
+    document.getElementById('EMAIL').textContent = newEmail
+    document.getElementById('AboutBox').textContent = newAbout
     document.getElementById('NameChange').style.display = 'none'
     document.getElementById('EmailChange').style.display = 'none'
     document.getElementById('AboutChange').style.display = 'none'
 
-    updateStart()
+    updateStart(newName, newEmail, newAbout)
 }
 
-const updateStart = async () => {
+const updateStart = async (newName, newEmail, newAbout) => {
     gapi.load('auth2', async function() {
         auth2 = await gapi.auth2.getAuthInstance({
           client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
@@ -212,12 +215,21 @@ const updateStart = async () => {
           scope: 'profile'
         });
         var id = auth2.currentUser.Ab.El
-        doTheUpdate(id)
+        doTheUpdate(id, newName, newEmail, newAbout)
     });
 }
 
-const doTheUpdate = id => {
-    console.log(id)
+const doTheUpdate = (id, newName, newEmail, newAbout) => {
+    console.log(id, newName, newEmail, newAbout)
+    // var xhr = new XMLHttpRequest();
+    // xhr.responseType = 'json';
+    // xhr.open('POST', '/api/users');
+    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // xhr.onload = function() {
+    //     document.getElementById('NAME').textContent = name
+    //     document.getElementById('EMAIL').textContent = email
+    // };
+    // xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
 }
 
 const displayUser = (name, email, about) => {
