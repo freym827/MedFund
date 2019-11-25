@@ -21,10 +21,8 @@ body {
     cursor: pointer;
 }
 .headLinkBox {
+    display: none;
     width: 470px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
     height: 30px;
     position: absolute;
     right: 0px;
@@ -38,17 +36,19 @@ body {
     padding-bottom: 5px;
     display: inline-block;
     border-right: 2px solid white;
+    font-weight: bold;
+    font-size: 20px;
 }
-.isSigned {
+.signInLink {
     display: none;
 }
-.isNotSigned {
+.myMedFundLink {
     display: none;
 }
 .headLinks:hover {
     color: black;
 }
-.instructions {
+.noBorderLink {
     border: none;
 }
 .hamburger {
@@ -390,7 +390,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1120px) {
     .howBox {
         width: 70%;
         margin-top: 0px;
