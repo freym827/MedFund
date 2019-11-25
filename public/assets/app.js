@@ -147,11 +147,11 @@ const editProfile = () => {
     document.getElementById('SaveChanges').style.display = 'block'
     const statics = document.getElementsByClassName('statics')
     const changers = document.getElementsByClassName('changers')
-    const fillers = [statics[0].textContent, statics[1].textContent]
-    for(i=0;i<2;i++) {
+    const fillers = [statics[0].textContent, statics[1].textContent, statics[2].textContent]
+    for(i=0;i<3;i++) {
         statics[i].style.display = 'none'
     }
-    for(i=0;i<2;i++) {
+    for(i=0;i<3;i++) {
         changers[i].style.display = 'inline-block'
     }
 }
@@ -161,9 +161,12 @@ const saveChanges = () => {
     document.getElementById('SaveChanges').style.display = 'none'
     document.getElementById('NAME').style.display = 'inline-block'
     document.getElementById('EMAIL').style.display = 'inline-block'
+    document.getElementById('AboutBox').style.display = 'inline-block'
     document.getElementById('NAME').textContent = document.getElementById('NameChange').value
     document.getElementById('EMAIL').textContent = document.getElementById('EmailChange').value
+    document.getElementById('AboutBox').textContent = document.getElementById('AboutChange').value
     document.getElementById('NameChange').style.display = 'none'
     document.getElementById('EmailChange').style.display = 'none'
+    document.getElementById('AboutChange').style.display = 'none'
 
 }
