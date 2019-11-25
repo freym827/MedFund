@@ -115,11 +115,10 @@ const signInDatabaseWork = (confirmedToken) => {
 }
 
 const testdatabase = () => {
-    console.log('hello')
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
-        console.log('Signed in as: ' + xhr.responseText);
+        console.log(xhr.responseText[1]);
     };
     xhr.send();
 }
