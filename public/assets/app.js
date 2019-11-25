@@ -119,7 +119,12 @@ const testdatabase = () => {
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
-        console.log(xhr.response.users);
+        let users = xhr.response.users
+        for(i=0,i<users.length, i++) {
+            if(users[i].google_id == '34523462') {
+                console.log("JEFAWEFEFAEFAEFWE")
+            }
+        }
     };
     xhr.send();
 }
