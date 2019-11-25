@@ -84,8 +84,7 @@ function onSignIn(googleUser) {
     xhr.onload = function() {
         // console.log('Signed in as: ' + xhr.responseText);
         confirmedToken = xhr.responseText
-        console.log(confirmedToken)
-        signInDatabaseWork()
+        signInDatabaseWork(confirmedToken)
     };
     xhr.send('idtoken=' + id_token);
     signedInSetUp()
@@ -106,6 +105,6 @@ function signOut() {
     }
 }
 
-const signInDatabaseWork = () => {
-
+const signInDatabaseWork = (confirmedToken) => {
+    console.log(confirmedToken)
 }
