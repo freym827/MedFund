@@ -8,6 +8,11 @@ module.exports = function(app) {
             err?res.send(err):res.json({users: data})
         })
     })
+
+    app.post('/api/users', (req, res) => {
+        console.log(req)
+        res.send()
+    })
    
     app.post('/api/tokensignin', async (req, res) => {
         const userid = await verify(req.body.idtoken)

@@ -109,8 +109,6 @@ function signOut() {
 }
 
 const signInDatabaseWork = (confirmedToken, name, email) => {
-    console.log(name)
-    console.log(email)
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
@@ -126,13 +124,20 @@ const signInDatabaseWork = (confirmedToken, name, email) => {
 
         }
         if(!isUser) {
-            addUser()
+            addUser(confirmedToken, name, email)
         }
     };
+    xhr.send();
 }
 
-const addUser = () => {
+const addUser = (confirmedToken, name, email) => {
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', '/api/users');
+    xhr.onload = function() {
 
+    };
+    xhr.send(confirmedToken, name, email);
 }
 // const testdatabase = () => {
 //     var xhr = new XMLHttpRequest();
