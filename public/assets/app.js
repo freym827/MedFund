@@ -65,7 +65,7 @@ document.addEventListener('mouseup', event => {
     }
 })
 
-function onSignIn(googleUser) {
+async function onSignIn(googleUser) {
     document.getElementById('MyMedFundLink').style.display = 'inline-block'
     document.getElementById('SignInLink').style.display = 'none'
     document.getElementById('SignInBox').style.display = 'none'
@@ -76,6 +76,10 @@ function onSignIn(googleUser) {
     // console.log('Name: ' + profile.getName());
     // console.log('Image URL: ' + profile.getImageUrl());
     // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    const name = await profile.getName()
+    const email = await profile.getEmail()
+    console.log(name)
+    console.log(email)
     var id_token = googleUser.getAuthResponse().id_token
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/api/tokensignin');
@@ -106,25 +110,47 @@ function signOut() {
 }
 
 const signInDatabaseWork = (confirmedToken) => {
-    console.log(confirmedToken)
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/api/users');
-    xhr.onload = function() {
-        console.log(xhr.responseText)
-    };
-}
-
-const testdatabase = () => {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
+        let isUser = false
         let users = xhr.response.users
         for(i=0;i<users.length;i++) {
-            if(users[i].google_id == '34523462') {
-                console.log("JEFAWEFEFAEFAEFWE")
+            if(users[i].google_id == confirmedToken) {
+                isUser = true
             }
         }
+        if(isUser) {
+
+        }
+        if(!isUser) {
+            addUser()
+        }
     };
-    xhr.send();
 }
+
+const addUser = () => {
+
+}
+// const testdatabase = () => {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', '/api/users');
+//     xhr.responseType = 'json';
+//     xhr.onload = function() {
+//         let isUser = false
+//         let users = xhr.response.users
+//         for(i=0;i<users.length;i++) {
+//             if(users[i].google_id == '34523462') {
+//                 isUser = true
+//             }
+//         }
+//         if(isUser) {
+
+//         }
+//         if(!isUser) {
+//             addUser()
+//         }
+//     };
+//     xhr.send();
+// }
