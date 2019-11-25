@@ -1,8 +1,39 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Handler when the DOM is fully loaded
-  
-
-let isButtonRendered = false;
+    let isButtonRendered = false;
+    gapi.load('auth2', async function(){
+        auth2 = gapi.auth2.init({
+            client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
+        })
+    })
+    
+    gapi.load('auth2', async function() {
+        auth2 = await gapi.auth2.getAuthInstance({
+          client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
+          fetch_basic_profile: true,
+          scope: 'profile'
+        });
+        var signed = await auth2.isSignedIn.get()
+        if(signed) {
+            signedInSetUp()
+        }
+        if(!signed) {
+            notSignedInSetUp()
+        }
+    });
+    function renderButton() {
+        isButtonRendered = true;
+        gapi.signin2.render('my-signin2', {
+          'scope': 'profile email',
+          'width': 240,
+          'height': 50,
+          'longtitle': true,
+          'theme': 'dark',
+          'onsuccess': onSignIn,
+          'onfailure': onFailure
+        });
+    }
+});
 function onFailure(error) {
 console.log(error);
 }
@@ -11,39 +42,6 @@ const signInSetUp = () => {
     document.getElementById('SignInBox').style.display = 'flex'
     renderButton()
 }
-function renderButton() {
-    isButtonRendered = true;
-    gapi.signin2.render('my-signin2', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark',
-      'onsuccess': onSignIn,
-      'onfailure': onFailure
-    });
-}
-
-gapi.load('auth2', async function(){
-    auth2 = gapi.auth2.init({
-        client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
-    })
-})
-
-gapi.load('auth2', async function() {
-    auth2 = await gapi.auth2.getAuthInstance({
-      client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
-      fetch_basic_profile: true,
-      scope: 'profile'
-    });
-    var signed = await auth2.isSignedIn.get()
-    if(signed) {
-        signedInSetUp()
-    }
-    if(!signed) {
-        notSignedInSetUp()
-    }
-});
 
 const signedInSetUp = () => {
     document.getElementById('MyMedFundLink').style.display = 'inline-block'
@@ -175,4 +173,4 @@ const saveChanges = () => {
 
 }
 
-});
+
