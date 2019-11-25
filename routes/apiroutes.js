@@ -10,9 +10,10 @@ module.exports = function(app) {
     })
 
     app.post('/api/users', (req, res) => {
-        console.log("HELOOOOOOOOOOOOOOOOOOFASEFASEFASEFASEFASGASGASEGASE")
-        console.log(req)
-        res.send()
+        const query = "insert into users (google_id, user_name, user_email) values ('hello', 'Test Boy 4', 'testboy4@gmail.com');"
+        connection.query(query, (err, data) => {
+            err?res.send(err):res.json({users: data})
+        })
     })
    
     app.post('/api/tokensignin', async (req, res) => {
