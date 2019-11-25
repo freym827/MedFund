@@ -93,6 +93,7 @@ body {
     padding-left: 10px;
     color: #ed7f61;
     text-decoration: none;
+    background-color: white;
 }
 .dropList:hover {
     background-color: black;

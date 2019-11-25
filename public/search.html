@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <!-- font-family: 'Libre Baskerville', serif; -->
+    <title>MedFund</title>
+    <meta name="google-signin-client_id" content="7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</head>
+<body>
+    <div class='header'>
+        <a class='headLogo' href='/'><img class='headLogo' alt='logo' src='assets/images/logoheadcrop.png'></a>
+        <div class='headLinkBox'>
+            <a href='/' class='headLinks'>Home</a>
+            <a href='' class='headLinks signInLink noBorderLink' id='SignInLink'>Sign in</a>
+            <a href='' class='headLinks myMedFundLink noBorderLink' id='MyMedFundLink'>My MedFund</a>
+        </div>
+        <div class='hamburgerCover' id='hc' onclick="dropList()"></div>
+        <div class='hamburger'>
+            <div class='bun'></div>
+            <div class='bun'></div>
+            <div class='bun'></div>
+        </div>
+    </div>
+    <div class='dropDown' id='DropDown'>
+        <a href='/' class='dropList dropOrange'>Home</a>
+        <a href='/mymedfund' class='dropList'>My MedFund</a>
+    </div>
+
+    <div class='available' id='Available'>
+        <button class='searchButton' id='SearchButton'></button>
+    </div>
+    <div id='SignInBox'></div>
+    <div id='ProfileBox'></div>
+<script type = "text/javascript" src = "assets/app.js"></script>
+
+</body>
+</html>
