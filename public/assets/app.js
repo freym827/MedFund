@@ -120,7 +120,7 @@ const testdatabase = () => {
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
         let users = xhr.response.users
-        for(i=0,i<users.length, i++) {
+        for(i=0;i<users.length;i++) {
             if(users[i].google_id == '34523462') {
                 console.log("JEFAWEFEFAEFAEFWE")
             }
