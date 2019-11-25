@@ -201,27 +201,18 @@ const saveChanges = async () => {
     document.getElementById('EmailChange').style.display = 'none'
     document.getElementById('AboutChange').style.display = 'none'
 
-    let token = await getCurrentToken()
-    console.log(token)
-    // var xhr = new XMLHttpRequest();
-    // xhr.responseType = 'json';
-    // xhr.open('POST', '/api/users');
-    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // xhr.onload = function() {
-        
-    // };
-    // xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
+    updateDatabase()
 }
 
-const getCurrentToken = async () => {
+const updateDatabase = async () => {
     gapi.load('auth2', async function() {
         auth2 = await gapi.auth2.getAuthInstance({
           client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
           fetch_basic_profile: true,
           scope: 'profile'
         });
-        var id = await auth2.currentUser.Ab.El
-        return id
+        var id = auth2.currentUser.Ab.El
+        console.log(id)
     });
 }
 
