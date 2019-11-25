@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Handler when the DOM is fully loaded
-    let isButtonRendered = false;
     gapi.load('auth2', async function(){
         auth2 = gapi.auth2.init({
             client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com'
@@ -21,19 +20,20 @@ document.addEventListener("DOMContentLoaded", function(){
             notSignedInSetUp()
         }
     });
-    function renderButton() {
-        isButtonRendered = true;
-        gapi.signin2.render('my-signin2', {
-          'scope': 'profile email',
-          'width': 240,
-          'height': 50,
-          'longtitle': true,
-          'theme': 'dark',
-          'onsuccess': onSignIn,
-          'onfailure': onFailure
-        });
-    }
 });
+let isButtonRendered = false;
+function renderButton() {
+    isButtonRendered = true;
+    gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': onSignIn,
+      'onfailure': onFailure
+    });
+}
 function onFailure(error) {
 console.log(error);
 }
