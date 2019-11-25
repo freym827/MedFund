@@ -261,7 +261,7 @@ body {
 }
 
 .profileBox {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     width: 1000px;
     position: absolute;

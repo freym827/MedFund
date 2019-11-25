@@ -3,6 +3,7 @@ function onFailure(error) {
 console.log(error);
 }
 const signInSetUp = () => {
+    console.log('hello')
     renderButton()
     document.getElementById('SignInBox').style.display = 'flex'
 }
