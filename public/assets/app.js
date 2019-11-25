@@ -84,11 +84,11 @@ function onSignIn(googleUser) {
     xhr.onload = function() {
         // console.log('Signed in as: ' + xhr.responseText);
         confirmedToken = xhr.responseText
+        console.log(confirmedToken)
+        signInDatabaseWork()
     };
     xhr.send('idtoken=' + id_token);
-    console.log(confirmedToken)
     signedInSetUp()
-    signInDatabaseWork()
 }
 
 function signOut() {
