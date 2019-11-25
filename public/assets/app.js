@@ -188,7 +188,7 @@ const clearFields= () => {
     }
 }
 
-const saveChanges = () => {
+const saveChanges = async () => {
     document.getElementById('EditProfile').style.display = 'block'
     document.getElementById('SaveChanges').style.display = 'none'
     document.getElementById('NAME').style.display = 'inline-block'
@@ -200,6 +200,28 @@ const saveChanges = () => {
     document.getElementById('NameChange').style.display = 'none'
     document.getElementById('EmailChange').style.display = 'none'
     document.getElementById('AboutChange').style.display = 'none'
+
+    let token = getCurrentToken()
+    // var xhr = new XMLHttpRequest();
+    // xhr.responseType = 'json';
+    // xhr.open('POST', '/api/users');
+    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // xhr.onload = function() {
+        
+    // };
+    // xhr.send('confirmedToken='+confirmedToken + '&name='+name + '&email=' + email);
+}
+
+const getCurrentToken = () => {
+    gapi.load('auth2', async function() {
+        auth2 = await gapi.auth2.getAuthInstance({
+          client_id: '7917026339-nv3kftq6gd34gr0ipegnjitujib77c4j.apps.googleusercontent.com',
+          fetch_basic_profile: true,
+          scope: 'profile'
+        });
+        console.log('hello')
+        console.log(auth2)
+    });
 }
 
 const displayUser = (name, email, about) => {
