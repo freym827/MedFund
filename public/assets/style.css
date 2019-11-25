@@ -382,7 +382,15 @@ body {
     -ms-transform: translate(-50%);
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
+    background-color: rgba(15, 96, 107, 1);
+    padding: 40px;
 }
+.userItem {
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgba(237, 127, 97, 1);
+}
+
 
 @media only screen and (min-width: 450px) {
     .signInBox {
