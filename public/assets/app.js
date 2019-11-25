@@ -80,12 +80,15 @@ function onSignIn(googleUser) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/api/tokensignin');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    var confirmedToken
     xhr.onload = function() {
         console.log('Signed in as: ' + xhr.responseText);
-
+        confirmedToken = xhr.responseText
     };
     xhr.send('idtoken=' + id_token);
+    console.log(confirmedToken)
     signedInSetUp()
+    signInDatabaseWork()
 }
 
 function signOut() {
@@ -101,4 +104,8 @@ function signOut() {
     if(!isButtonRendered) {
         renderButton()
     }
+}
+
+const signInDatabaseWork = () => {
+
 }
