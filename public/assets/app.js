@@ -119,7 +119,7 @@ const testdatabase = () => {
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
     xhr.onload = function() {
-        console.log(xhr.response);
+        console.log(xhr.response.users);
     };
     xhr.send();
 }
