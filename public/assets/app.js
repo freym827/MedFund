@@ -220,7 +220,8 @@ const getCurrentToken = () => {
           scope: 'profile'
         });
         console.log('hello')
-        console.log(auth2)
+        var profile = auth2.getBasicProfile()
+        console.log(profile)
     });
 }
 
