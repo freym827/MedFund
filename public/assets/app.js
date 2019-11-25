@@ -116,6 +116,7 @@ function signOut() {
     if(!isButtonRendered) {
         renderButton()
     }
+    clearFields()
 }
 
 const signInDatabaseWork = (confirmedToken, name, email) => {
@@ -169,6 +170,19 @@ const editProfile = () => {
     }
     for(i=0;i<3;i++) {
         changers[i].style.display = 'inline-block'
+    }
+}
+
+const clearFields= () => {
+    document.getElementById('EditProfile').style.display = 'block'
+    document.getElementById('SaveChanges').style.display = 'none'
+    const statics = document.getElementsByClassName('statics')
+    const changers = document.getElementsByClassName('changers')
+    for(i=0;i<3;i++) {
+        statics[i].style.display = 'inline-block'
+    }
+    for(i=0;i<3;i++) {
+        changers[i].style.display = 'none'
     }
 }
 
