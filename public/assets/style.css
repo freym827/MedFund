@@ -362,6 +362,39 @@ body {
     margin-top: 100px;
 }
 
+.searchButton {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    -ms-transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    background-color:rgba(237, 127, 97, 1);
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+}
+.searchTable {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    top: 250px;
+    width: 80%;
+    border-collapse: collapse;
+}
+  
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
 @media only screen and (min-width: 450px) {
     .signInBox {
         width: 400px;
