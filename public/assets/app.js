@@ -42,10 +42,13 @@ gapi.load('auth2', async function() {
 
 const signedInSetUp = () => {
     document.getElementById('MyMedFundLink').style.display = 'inline-block'
+    document.getElementById('ProfileBox').style.display = 'flex'
 }
 
 const notSignedInSetUp = () => {
     document.getElementById('SignInLink').style.display = 'inline-block'
+    document.getElementById('SignInBox').style.display = 'flex'
+    renderButton()
 }
 var dropList = () => {
     drop = document.getElementById('DropDown')
@@ -62,8 +65,8 @@ document.addEventListener('mouseup', event => {
 })
 
 function onSignIn(googleUser) {
-    document.getElementById('MyMedFund').style.display = 'inline-block'
-    document.getElementById('SignIn').style.display = 'none'
+    document.getElementById('MyMedFundLink').style.display = 'inline-block'
+    document.getElementById('SignInLink').style.display = 'none'
     // document.getElementById('ProfileLink').style.display = 'inline-block'
     // document.getElementById('SignInLink').style.display = 'none'
     // var profile = googleUser.getBasicProfile();
