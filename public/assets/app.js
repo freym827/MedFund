@@ -119,6 +119,9 @@ function signOut() {
 }
 
 const signInDatabaseWork = (confirmedToken, name, email) => {
+    let name
+    let email
+    let about
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.open('GET', '/api/users');
@@ -128,10 +131,13 @@ const signInDatabaseWork = (confirmedToken, name, email) => {
         for(i=0;i<users.length;i++) {
             if(users[i].google_id == confirmedToken) {
                 isUser = true
+                name = users[i].user_name
+                email = users[i].user_email
+                about = users[i].user_about
             }
         }
         if(isUser) {
-            displayUser(confirmedToken)
+            displayUser(name, email, about)
         }
         if(!isUser) {
             addUser(confirmedToken, name, email)
@@ -180,8 +186,10 @@ const saveChanges = () => {
     document.getElementById('AboutChange').style.display = 'none'
 }
 
-const displayUser = confirmedToken => {
-    console.log(confirmedToken)
+const displayUser = (name, email, about) => {
+    document.getElementById('NAME').textContent = name
+    document.getElementById('EMAIL').textContent = email
+    document.getElementById('AboutBox').textContent = about
 }
 
 
